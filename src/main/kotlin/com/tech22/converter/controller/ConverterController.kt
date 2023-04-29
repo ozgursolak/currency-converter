@@ -23,6 +23,7 @@ class ConverterController(val service: ConverterService) {
     suspend fun convert(@Valid convertRequest: ConvertRequest): ResponseEntity<ConversionClientResult> {
         val result = service.convert(convertRequest)
         val conversionClientResult = ConversionClientResult(result = result)
+
         return ResponseEntity.ok(conversionClientResult)
     }
 }

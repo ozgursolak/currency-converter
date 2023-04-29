@@ -15,12 +15,14 @@ class ExceptionControllerAdvice {
     @ExceptionHandler
     fun handleExternalServiceNotRespondingException(ex: ExternalServiceNotRespondingException): ResponseEntity<ErrorModel> {
         val errorModel = ErrorModel(message = ex.message, cause = ex.cause)
+
         return ResponseEntity(errorModel, HttpStatus.INTERNAL_SERVER_ERROR)
     }
 
     @ExceptionHandler
     fun handleRateNotFoundException(ex: RateNotFoundException): ResponseEntity<ErrorModel> {
         val errorModel = ErrorModel(message = ex.message, cause = null)
+
         return ResponseEntity(errorModel, HttpStatus.BAD_REQUEST)
     }
 }
