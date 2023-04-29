@@ -3,12 +3,11 @@ package com.tech22.converter.service
 import com.tech22.converter.constant.ConversionRateConstant
 import com.tech22.converter.payload.request.ConvertRequest
 import io.mockk.every
+import io.mockk.mockkObject
 import org.junit.jupiter.api.Test
 
 import com.tech22.converter.service.impl.ConverterServiceImpl
 import com.tech22.converter.utils.ConversionRates
-import io.mockk.mockkObject
-
 
 class ConversionServiceUnitTest {
 

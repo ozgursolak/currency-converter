@@ -27,7 +27,7 @@ class ConversionRates {
                 throw RateNotFoundException(message = conversionResult.error.info)
             }
 
-            return conversionResult.result;
+            return conversionResult.result
         }
 
         private fun getDataFromConversionAPI(url: String): String {

@@ -1,7 +1,6 @@
 package com.tech22.converter.controller
 
 import com.ninjasquad.springmockk.MockkBean
-import com.ninjasquad.springmockk.clear
 import io.mockk.every
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -10,10 +9,10 @@ import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.http.MediaType
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.asyncDispatch
 
 import com.tech22.converter.payload.request.ConvertRequest
 import com.tech22.converter.service.ConverterService
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.asyncDispatch
 
 @WebMvcTest
 class ConversionControllerUnitTest(@Autowired val mockMvc: MockMvc) {
@@ -25,7 +24,7 @@ class ConversionControllerUnitTest(@Autowired val mockMvc: MockMvc) {
 
     @Test
     fun converterController_whenGetRequest_thenReturnsAmountJsonWithStatus200() {
-        every { converterService.convert(validConvertRequest) } returns 100.0;
+        every { converterService.convert(validConvertRequest) } returns 100.0
 
         val mvcResult = mockMvc.perform(get("/api/convert?convertFrom=USD&convertTo=EUR&amount=100"))
             .andExpect(status().isOk)
