@@ -1,7 +1,5 @@
 # Currency Converter App
 
-
-
 > - Test URL: *localhost:8080/api/convert?convertFrom=USD&convertTo=EUR&amount=600*
 
 #### NOTES
