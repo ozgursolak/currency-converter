@@ -15,7 +15,7 @@ class ConversionServiceUnitTest {
     private val validConvertRequest = ConvertRequest(convertFrom = "USD", convertTo = "EUR", amount = 100)
 
     @Test
-    fun whenGetBankAccount_thenReturnBankAccount() {
+    fun whenGetConversionResult_thenReturnConversion() {
         val url = ConversionRateConstant.URL
             .plus("?to=${validConvertRequest.convertTo}&from=${validConvertRequest.convertFrom}&amount=${validConvertRequest.amount}")
 
